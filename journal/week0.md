@@ -23,7 +23,6 @@ tasks:
 ###Created New user and Generated credentials
 
 1. Go to(IAM Users Console](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users) aws-lon create a new user
-- 
 2. `Enable console access` for the user
 3. Create a new `Admin` Group and apply `AdministratorAccess`
 4. Create the user and go find and click into the user
@@ -36,14 +35,14 @@ I set credentials for the current bash terminal
 ```
 export AWS_ACCESS_KEY_ID=""
 export AWS_SECRET_ACCESS_KEY=""
-export AWS_DEFAULT_REGION=us-east-1
+export AWS_DEFAULT_REGION=eu-west-2
 ```
-![alt text][AWS-Gitpod.png
+- ![Credentials](assets/AWS-Gitpod.png)
 
-We'll tell Gitpod to remember these credentials if we relaunch our workspaces
+Gitpod to remember these credentials if we relaunch our workspaces
 ```
 gp env AWS_ACCESS_KEY_ID=""
 gp env AWS_SECRET_ACCESS_KEY=""
-gp env AWS_DEFAULT_REGION=us-east-1
+gp env AWS_DEFAULT_REGION=eu-west-2
 ```
-
+- ![
