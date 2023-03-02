@@ -95,11 +95,11 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 
 1. Destroy your root account credentials, Set MFA, IAM role - DONE
 2. Use EventBridge to hookup Health Dashboard to SNS and send notification when there is a service health issue - DONE
-3. Review all the questions of each pillars in the Well Architected Tool (No specialized lens)
-4. Create an architectural diagram (to the best of your ability) the CI/CD logical pipeline 
+3. Review all the questions of each pillars in the Well Architected Tool (No specialized lens) - DONE
+4. Create an architectural diagram (to the best of your ability) the CI/CD logical pipeline - DONE
 [Logical Diagram](https://drive.google.com/file/d/1ytWf-KxGFlCPJiKvGjrIvqfx2OoOSXjk/view?usp=sharing)
 [Conceptual_Diagram](https://drive.google.com/file/d/1zEEkgdcOLmKMdPBzpRGVFFxnjinjbWut/view?usp=sharing)
 
-Research the technical and service limits of specific services and how they could impact the technical path for technical flexibility. 
-Open a support ticket and request a service limit
+5. Research the technical and service limits of specific services and how they could impact the technical path for technical flexibility - DONE
+6. Open a support ticket and request a service limit - DONE
 
