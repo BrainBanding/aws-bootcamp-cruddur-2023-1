@@ -45,4 +45,58 @@ gp env AWS_ACCESS_KEY_ID=""
 gp env AWS_SECRET_ACCESS_KEY=""
 gp env AWS_DEFAULT_REGION=eu-west-2
 ```
-- ![
+- ![Credentials](assets/Remember%20credentials.png)
+
+
+## Creating a Billing Alarm
+
+### Create SNS Topic
+
+####SNS Topic
+
+Followed the onlineresource: [aws sns create-topic](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic.html)
+
+Create a SNS Topic
+```sh
+aws sns create-topic --name billing-alarm
+```
+TopicARN   ` "arn:aws:sns:eu-west-2:691570650286:billing-alarm"`
+
+Created reate a subscription supply the TopicARN and our Email
+```sh
+aws sns subscribe \
+    --topic-arn TopicARN \
+    --protocol email \
+    --notification-endpoint your@email.com
+```
+- ![SNS TOPIC](assets/SNS-Topic-CLI_1.png)
+
+Email recived and sub confirmed.
+- ![email sub](assets/SNS%20email%20sub.png)
+
+#### Create Alarm
+
+- [aws cloudwatch put-metric-alarm](https://docs.aws.amazon.com/cli/latest/reference/cloudwatch/put-metric-alarm.html)
+- [Create an Alarm via AWS CLI](https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/)
+- Jason config script updated with TopiCan
+
+```sh
+aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
+```
+![CloudWatch-alarm-daily](assets/CloudWatch-daily-estimate.png)
+
+
+## Create an AWS Budget
+
+[aws budgets create-budget](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html)
+
+
+#**HOMEWORK OUTLINE
+
+Destroy your root account credentials, Set MFA, IAM role - ** <span style="color:blue">some *blue* text</span>.
+Use EventBridge to hookup Health Dashboard to SNS and send notification when there is a service health issue.
+Review all the questions of each pillars in the Well Architected Tool (No specialized lens)
+Create an architectural diagram (to the best of your ability) the CI/CD logical pipeline in Lucid Charts
+Research the technical and service limits of specific services and how they could impact the technical path for technical flexibility. 
+Open a support ticket and request a service limit
+
